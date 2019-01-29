@@ -5,15 +5,11 @@ import CardList from '../../components/CardList/CardList';
 import { getCharactersAction } from "../../actions/apiCallActions";
 
 class CardsContainer extends Component {
-
     componentDidMount() {
         this.getCharacters();
     }
 
     getCharacters = (searchTerm) => {
-
-        console.log(searchTerm);
-
         const { getCharactersAction } = this.props;
         getCharactersAction(searchTerm);
     }
@@ -22,7 +18,6 @@ class CardsContainer extends Component {
         return (
             <div>
                 <h2>Marvel Characters</h2>
-                {/*<pre>{JSON.stringify(this.props.cards)}</pre>*/}
                 <hr/>
                 <SearchBar onSearch={this.getCharacters} />
                 <CardList cards={this.props.cards}/>

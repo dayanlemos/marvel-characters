@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SearchBar = (props) => {
-
     const handleSearch = function (e) {
         const { onSearch } = props;
         onSearch(e.target.value);

@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '../Card/Card';
 
 const CardList = (props) => {
-
     const { cards } = props;
 
     return (
@@ -10,6 +9,6 @@ const CardList = (props) => {
             { cards.map((card, key) => <Card card={card} key={key} /> ) }
         </div>
     )
-}
+};
 
 export default CardList;

@@ -5,14 +5,11 @@ import { Formik } from 'formik';
 import { getActiveCharacterAction } from '../../actions/apiCallActions';
 
 class CardDetailContainer extends Component {
-
     componentDidMount() {
         this.setActiveCard();
     }
 
     setActiveCard = () => {
-        console.log('set active card '+this.props.match.params.id);
-
         const { getActiveCharacterAction } = this.props;
         getActiveCharacterAction();
     };
@@ -52,7 +49,6 @@ class CardDetailContainer extends Component {
                     </div>
                 </div>
 
-                {/*<pre>{JSON.stringify(card)}</pre>*/}
                 <hr/>
 
                 {card.id ?
@@ -82,6 +78,18 @@ class CardDetailContainer extends Component {
                                     </form>
                                 )}
                             </Formik>
+
+                            <hr />
+
+                            <h3>Series</h3>
+                            {card.seriesList.map((serie, key) => (
+                                <div className="list-group">
+                                    <div className="list-group-item">
+                                        <h5>{serie.title}</h5>
+                                        <p>{serie.description}</p>
+                                    </div>
+                                </div>
+                                ))}
 
                         </div>
                     </div>
